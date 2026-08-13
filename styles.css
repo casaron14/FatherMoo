@@ -1,0 +1,381 @@
+/* ====================
+   CSS VARIABLES & RESET
+   ==================== */
+:root {
+    --bg: #141414;
+    --panel: #1b1b1b;
+    --panel-2: #232323;
+    --orange: #ff7a1a;
+    --orange-2: #ff9143;
+    --text: #f4f4f2;
+    --muted: #9a9a97;
+    --line: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0b0b0b;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ====================
+   LAYOUT
+   ==================== */
+.outer {
+    padding: 22px;
+}
+
+.card {
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: var(--bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    overflow: hidden;
+    padding: 38px 56px 60px;
+}
+
+/* Faceted background shards */
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.card::before {
+    top: -10%;
+    left: -8%;
+    width: 46%;
+    height: 60%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 60%);
+    clip-path: polygon(0 0, 70% 0, 40% 100%, 0% 100%);
+}
+
+.card::after {
+    bottom: -15%;
+    right: -6%;
+    width: 40%;
+    height: 70%;
+    background: linear-gradient(315deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 60%);
+    clip-path: polygon(100% 0, 100% 100%, 30% 100%, 60% 0);
+}
+
+/* ====================
+   NAVIGATION
+   ==================== */
+nav {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 64px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--orange);
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-links a.active {
+    color: var(--orange);
+}
+
+.hire-nav {
+    background: linear-gradient(135deg, var(--orange-2), var(--orange));
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 122, 26, 0.28);
+    transition: transform 0.25s ease;
+}
+
+.hire-nav:hover {
+    transform: translateY(-2px);
+}
+
+/* ====================
+   HERO SECTION
+   ==================== */
+.hero {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Text animations */
+.hi {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+    opacity: 0;
+    animation: riseIn 0.7s ease 0.05s forwards;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 18px;
+    opacity: 0;
+    animation: riseIn 0.7s ease 0.15s forwards;
+}
+
+.role {
+    font-size: clamp(2.6rem, 4.6vw, 4.2rem);
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1.05;
+    margin: 0 0 30px;
+    opacity: 0;
+    animation: riseIn 0.8s ease 0.25s forwards;
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====================
+   SOCIAL LINKS
+   ==================== */
+.socials {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--panel-2);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--line);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+    background: var(--orange);
+    transform: translateY(-3px);
+}
+
+/* ====================
+   BUTTONS
+   ==================== */
+.cta-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: riseIn 0.7s ease 0.45s forwards;
+}
+
+.btn {
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+    border: none;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--orange-2), var(--orange));
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(255, 122, 26, 0.28);
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ====================
+   STATS
+   ==================== */
+.stats {
+    display: flex;
+    background: var(--panel-2);
+    border-radius: 14px;
+    padding: 26px 30px;
+    width: fit-content;
+    gap: 0;
+    opacity: 0;
+    animation: riseIn 0.8s ease 0.55s forwards;
+}
+
+.stat {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.stat:not(:last-child) {
+    border-right: 1px solid var(--line);
+}
+
+.stat .num {
+    color: var(--orange);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.stat .label {
+    color: #d8d8d5;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+/* ====================
+   PORTRAIT
+   ==================== */
+.portrait-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.portrait-wrap::before {
+    content: "";
+    position: absolute;
+    width: 78%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #2a2a2a, #161616 72%);
+    bottom: 0;
+}
+
+.portrait {
+    position: relative;
+    z-index: 2;
+    width: 82%;
+    height: auto;
+    display: block;
+    filter: grayscale(1) contrast(1.05);
+    opacity: 0;
+    animation: riseIn 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s forwards;
+}
+
+/* ====================
+   RESPONSIVE DESIGN
+   ==================== */
+@media (max-width: 980px) {
+    .card {
+        padding: 28px 22px 40px;
+    }
+
+    nav {
+        padding-bottom: 34px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .portrait-wrap {
+        order: -1;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .portrait-wrap::before {
+        width: 60%;
+    }
+
+    .portrait {
+        width: 56%;
+        margin: 0 auto;
+    }
+
+    .stats {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .stat {
+        padding: 10px 20px;
+    }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
