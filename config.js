@@ -11,9 +11,9 @@ const CONFIG = {
 
     // Social Media Links (update with actual profiles)
     social: {
-        whatsapp: "https://wa.me/1234567890",  // Replace with actual phone number
-        instagram: "https://instagram.com/yourhandle",
-        tiktok: "https://tiktok.com/@yourhandle",
+        whatsapp: "https://wa.me/255717097704",  // Replace with actual phone number
+        instagram: "https://instagram.com/crypto_digital_shares",
+        tiktok: "https://tiktok.com/@digitalsharesinvestor13",
         vcf: "fathermoo.vcf"
     },
 
@@ -26,7 +26,7 @@ const CONFIG = {
     // Call to Action
     cta: {
         buttonText: "Download Inkryptus",
-        downloadUrl: "#"  // Update with actual download link
+        downloadUrl: "https://link.inkryptus.com/fathermoo"  // Update with actual download link
     },
 
     // Contact Button Action
