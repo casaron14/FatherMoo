@@ -97,31 +97,9 @@ nav {
     height: auto;
 }
 
-.nav-links {
-    display: flex;
-    gap: 38px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.92rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: var(--text);
-}
-
-.nav-links a.active {
-    color: var(--orange);
-}
-
 .hire-nav {
+    display: inline-block;
+    text-decoration: none;
     background: linear-gradient(135deg, var(--orange-2), var(--orange));
     color: #fff;
     border: none;
@@ -224,6 +202,7 @@ nav {
    ==================== */
 .cta-row {
     display: flex;
+    justify-content: center;
     gap: 16px;
     margin-bottom: 44px;
     opacity: 0;
@@ -231,6 +210,10 @@ nav {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
     padding: 14px 30px;
     border-radius: 10px;
     font-size: 0.92rem;
@@ -265,13 +248,14 @@ nav {
     background: var(--panel-2);
     border-radius: 14px;
     padding: 26px 30px;
-    width: fit-content;
     gap: 0;
     opacity: 0;
     animation: riseIn 0.8s ease 0.55s forwards;
+    margin-bottom: 20px;
 }
 
 .stat {
+    flex: 1;
     padding: 0 30px;
     text-align: center;
 }
@@ -336,10 +320,6 @@ nav {
 
     nav {
         padding-bottom: 34px;
-    }
-
-    .nav-links {
-        display: none;
     }
 
     .hero {
